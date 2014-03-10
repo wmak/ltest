@@ -1,0 +1,5 @@
+while :
+do
+	clear && $1 $2
+	sleep $3
+done
