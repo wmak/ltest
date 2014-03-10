@@ -1,1 +1,4 @@
-To run sh ltest <command> <file> <how long to sleep>
+To run 
+```bash
+ltest <command> <file> <how long to sleep>
+```
