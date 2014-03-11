@@ -1,5 +1,7 @@
 while :
 do
-	clear && $1 $2
-	sleep $3
+	if [ $(expr `date +%s` - `date +%s -r $2`) -lt 3 ]; then
+		clear && $1 $2
+	fi
+	sleep 3
 done
