@@ -1,4 +1,4 @@
 To run 
 ```bash
-ltest <command> <file> <how long to sleep>
+ltest <command to run> <file to monitor>
 ```
