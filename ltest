@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 while :
 do
 	if [ $(expr `date +%s` - `date +%s -r $2`) -lt 3 ]; then
