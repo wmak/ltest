@@ -1,7 +1,8 @@
+#!/bin/bash
 while :
 do
 	if [ $(expr `date +%s` - `date +%s -r $2`) -lt 3 ]; then
-		clear && $1 $2
+		clear && $1
 	fi
 	sleep 3
 done
