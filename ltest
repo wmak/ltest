@@ -1,13 +1,13 @@
 #!/bin/sh
 
 if [ ! -f $2 ]; then
-	    echo "File not found!"
-		exit
+	echo "File not found!"
+	exit
 fi
 
 while :
 do
-	if [ $(expr `date +%s` - `date +%s -r $2`) -lt 5 ]; then
+	if [ $(expr `date +%s` - `date +%s -r $2`) -lt 3 ]; then
 		clear && $1
 	fi
 	sleep 2
