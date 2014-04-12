@@ -1,10 +1,12 @@
 #!/bin/sh
 
+# Check that the file being checked actually exists
 if [ ! -f $2 ]; then
 	echo "File not found!"
 	exit
 fi
 
+# Main execution loop, detect if file has changed within the last 2 seconds.
 while :
 do
 	if [ $(expr `date +%s` - `date +%s -r $2`) -lt 2 ]; then
