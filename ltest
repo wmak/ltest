@@ -1,8 +1,12 @@
 #!/bin/sh
 
 # Check that the file being checked actually exists
-if [ ! -f $2 ]; then
-	echo "File not found!"
+if [ -f $2 ]; then
+	echo "Starting ltest on this file"
+elif [ -d $2 ]; then
+	echo "Starting ltest on this folder"
+else
+	echo "This is not a file or folder"
 	exit
 fi
 
