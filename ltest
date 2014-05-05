@@ -1,20 +1,34 @@
-#!/bin/sh
+#/bin/sh
+
+if [ $# -lt 3 ]; then
+	echo -e "usage: ltest <file> <command>\n\nAn example use of ltest would be:"
+	echo -e "   ltest ./go-raptor go run"
+	exit 1
+fi
+
+# Store the file and shift variables
+file=$1
+shift
 
 # Check that the file being checked actually exists
-if [ -f $2 ]; then
+if [ -f $file ]; then
 	echo "Starting ltest on this file"
-elif [ -d $2 ]; then
+elif [ -d $file ]; then
 	echo "Starting ltest on this folder"
 else
-	echo "This is not a file or folder"
+	echo $file" is is not a file or folder"
 	exit
 fi
+
+# Store the intial timestamp for the file
+timestamp=`date +%s -r $file`
 
 # Main execution loop, detect if file has changed within the last 2 seconds.
 while :
 do
-	if [ $(expr `date +%s` - `date +%s -r $2`) -lt 2 ]; then
-		clear && $1
+	if [ $(expr `date +%s -r $file` - $timestamp) -gt 0 ]; then
+		timestamp=`date +%s -r $file`
+		clear && $*
 	fi
-	sleep 1
+	sleep 2
 done
