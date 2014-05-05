@@ -10,11 +10,22 @@ ltest ./ "make html"
 ```
 
 ## Installation
-Either add ltest to a properly sourced
+Clone ltest via git:
 ```bash
-/bin
+git clone https://github.com/wmak/ltest.git
 ```
-folder in your home directory or you may run this command:
+Then in the ltest folder either add ltest to a properly sourced /bin folder in
+your home directory:
+```bash
+ln -s ltest $HOME/bin/ltest
+```
+*or* add it to your local/bin folder:
 ```bash
 sudo ln -s ltest /usr/local/bin/ltest
+```
+
+## Update
+To update ltest, navigate to the directory where ltest was cloned and pull
+```bash
+git pull
 ```
