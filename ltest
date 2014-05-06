@@ -1,5 +1,6 @@
 #/bin/sh
 
+# Usage on improper input
 if [ $# -lt 3 ]; then
 	echo -e "usage: ltest <file> <command>\n\nAn example use of ltest would be:"
 	echo -e "   ltest ./go-raptor go run"
@@ -17,7 +18,7 @@ elif [ -d $file ]; then
 	echo "Starting ltest on this folder"
 else
 	echo $file" is is not a file or folder"
-	exit
+	exit 1
 fi
 
 # Store the intial timestamp for the file
