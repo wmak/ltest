@@ -13,9 +13,9 @@ shift
 
 # Check that the file being checked actually exists
 if [ -f $file ]; then
-	echo "Starting ltest on this file"
+	echo "Starting ltest on the file: "$file
 elif [ -d $file ]; then
-	echo "Starting ltest on this folder"
+	echo "Starting ltest on the folder: "$file
 else
 	echo $file" is is not a file or folder"
 	exit 1
