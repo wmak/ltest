@@ -7,7 +7,7 @@ if [ $# -lt 3 ]; then
 	exit 1
 fi
 
-# Store the file and shift variables
+# Store the name of the file and shift variables
 file=$1
 shift
 
