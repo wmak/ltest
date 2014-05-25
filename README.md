@@ -26,6 +26,8 @@ sudo ln -s ltest /usr/local/bin/ltest
 
 ## Update
 To update ltest, navigate to the directory where ltest was cloned and pull
+because it was symbolically linked earlier this will change the code everywhere
+else as well.
 ```bash
 git pull
 ```
