@@ -2,8 +2,11 @@
 
 # Usage on improper input
 if [ $# -lt 3 ]; then
-	echo -e "usage: ltest <file> <command>\n\nAn example use of ltest would be:"
-	echo -e "   ltest ./go-raptor go run"
+	echo "usage: ltest <file> <command>\n\nAn example use of ltest would be:"
+	echo "   ltest ./go-raptor go run"
+	echo "\n ltest will work on either a file or an entire folder"
+	echo "for example\n    ltest ./ go run"
+	echo "will run whenever there's a change in the current directory"
 	exit 1
 fi
 
