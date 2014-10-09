@@ -1,7 +1,7 @@
 #/bin/sh
 
 # Usage on improper input
-if [ $# -lt 3 ]; then
+if [ $# -lt 2 ]; then
 	echo "usage: ltest <file> <command>\n\nAn example use of ltest would be:"
 	echo "   ltest ./go-raptor go run"
 	echo "\n ltest will work on either a file or an entire folder"
