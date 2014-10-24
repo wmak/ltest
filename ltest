@@ -32,7 +32,10 @@ while :
 do
 	if [ $(expr `date +%s -r $file` - $timestamp) -gt 0 ]; then
 		timestamp=`date +%s -r $file`
-		clear && $*
+		# Check that the file isn't being modified
+		if [ -f $file ] || [ -d $file ]; then
+			clear && $*
+		fi
 	fi
 	sleep 2
 done
