@@ -25,13 +25,13 @@ else
 fi
 
 # Store the intial timestamp for the file
-timestamp=`date +%s -r $file`
+timestamp=`gdate +%s -r $file`
 
 # Main execution loop, detect if file has changed within the last 2 seconds.
 while :
 do
-	if [ $(expr `date +%s -r $file` - $timestamp) -gt 0 ]; then
-		timestamp=`date +%s -r $file`
+	if [ $(expr `gdate +%s -r $file` - $timestamp) -gt 0 ]; then
+		timestamp=`gdate +%s -r $file`
 		# Check that the file isn't being modified
 		if [ -f $file ] || [ -d $file ]; then
 			clear && $*
